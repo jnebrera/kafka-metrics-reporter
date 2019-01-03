@@ -4,7 +4,7 @@
 
     <groupId>io.wizzie.metrics</groupId>
     <artifactId>kafka-metric-reporter</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
 
     <properties>
@@ -30,7 +30,7 @@
     <scm>
         <developerConnection>scm:git:git@github.com:wizzie-io/kafka-metrics-reporter.git</developerConnection>
         <connection>scm:git:git@github.com:wizzie-io/kafka-metrics-reporter.git</connection>
-        <tag>kafka-metric-reporter-1.0.1</tag>
+        <tag>HEAD</tag>
         <url>git@github.com:wizzie-io/kafka-metrics-reporter.git</url>
     </scm>
 
