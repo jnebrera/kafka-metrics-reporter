@@ -51,13 +51,16 @@ public class KafkaMetricsTest {
         consumerConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         consumerConfig.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-        List<KeyValue<String, String>> result = IntegrationTestUtils.waitUntilMinKeyValueRecordsReceived(consumerConfig, METRICS_TOPIC, 1);
+        List<KeyValue<String, String>> results = IntegrationTestUtils.waitUntilMinKeyValueRecordsReceived(consumerConfig, METRICS_TOPIC, 10);
 
-        assertTrue(result.size() > 0);
-        assertTrue(result.get(0).value.contains("host"));
-        assertTrue(result.get(0).value.contains("component"));
-        assertTrue(result.get(0).value.contains("timestamp"));
-        assertTrue(result.get(0).value.contains("value"));
-        assertTrue(result.get(0).value.contains("monitor"));
+        assertTrue(results.size() > 0);
+        for(KeyValue<String, String> result : results) {
+            assertTrue(result.value.contains("host"));
+            assertTrue(result.value.contains("component"));
+            assertTrue(result.value.contains("timestamp"));
+            assertTrue(result.value.contains("value"));
+            assertTrue(result.value.contains("monitor"));
+            assertTrue(result.value.contains("app_id"));
+        }
     }
 }

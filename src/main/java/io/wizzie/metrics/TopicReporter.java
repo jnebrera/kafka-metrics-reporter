@@ -71,6 +71,7 @@ public class TopicReporter extends AbstractPollingReporter implements MetricProc
             monitor = name.getName();
         }
 
+        data.put("app_id", "kafka");
         data.put("component", name.getGroup());
         data.put("monitor", monitor + "-1minute");
         data.put("value", meter.oneMinuteRate());
@@ -90,6 +91,7 @@ public class TopicReporter extends AbstractPollingReporter implements MetricProc
             monitor = name.getName();
         }
 
+        data.put("app_id", "kafka");
         data.put("component", name.getGroup());
         data.put("monitor", monitor);
         data.put("value", counter.count());
@@ -109,6 +111,7 @@ public class TopicReporter extends AbstractPollingReporter implements MetricProc
             monitor = name.getName();
         }
 
+        data.put("app_id", "kafka");
         data.put("component", name.getGroup());
         data.put("monitor", monitor);
         data.put("value", histogram.mean());
@@ -128,6 +131,7 @@ public class TopicReporter extends AbstractPollingReporter implements MetricProc
             monitor = name.getName();
         }
 
+        data.put("app_id", "kafka");
         data.put("component", name.getGroup());
         data.put("monitor", monitor);
         data.put("value", timer.mean());
@@ -147,6 +151,7 @@ public class TopicReporter extends AbstractPollingReporter implements MetricProc
             monitor = name.getName();
         }
 
+        data.put("app_id", "kafka");
         data.put("component", name.getGroup());
         data.put("monitor", monitor);
         data.put("value", gauge.value().toString());
